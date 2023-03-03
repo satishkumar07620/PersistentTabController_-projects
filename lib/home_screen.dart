@@ -313,7 +313,7 @@ class _Home_Screen_PageState extends State<Home_Screen_Page> {
                           ),
                         ),
                       ],
-                    ),
+                    ),      
                     GridView.builder(
                         shrinkWrap: true,
                         itemCount: list1.length,
