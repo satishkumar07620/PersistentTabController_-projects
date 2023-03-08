@@ -68,21 +68,19 @@ class _Pres_Bottom_Nav_BarState extends State<Pres_Bottom_Nav_Bar> {
         inactiveColorPrimary: CupertinoColors.systemGrey,
       ),
       PersistentBottomNavBarItem(
-        icon: Icon(Icons.camera_alt
-           ),
+        icon: Icon(Icons.camera_alt),
         title: ("Sell"),
         textStyle: TextStyle(
           fontSize: 10,
           fontWeight: FontWeight.w400,
         ),
         activeColorSecondary: Colors.white,
-      
+
         activeColorPrimary: Colors.blue, //inside color
         inactiveColorPrimary: CupertinoColors.systemGrey,
       ),
       PersistentBottomNavBarItem(
-        icon: Icon(Icons.chat
-             ),
+        icon: Icon(Icons.chat),
         title: ("Chat"),
         textStyle: TextStyle(
           fontSize: 10,
@@ -92,8 +90,7 @@ class _Pres_Bottom_Nav_BarState extends State<Pres_Bottom_Nav_Bar> {
         inactiveColorPrimary: CupertinoColors.systemGrey,
       ),
       PersistentBottomNavBarItem(
-        icon: Icon(Icons.add_reaction_sharp
-             ),
+        icon: Icon(Icons.add_reaction_sharp),
         title: ("Profile"),
         textStyle: TextStyle(
           fontSize: 10,
@@ -113,7 +110,7 @@ class _Pres_Bottom_Nav_BarState extends State<Pres_Bottom_Nav_Bar> {
       screens: _buildScreen(),
       items: _navBarItem(),
       confineInSafeArea: true,
-      backgroundColor: Colors.white,    //white
+      backgroundColor: Colors.white, //white
       handleAndroidBackButtonPress: true,
       resizeToAvoidBottomInset: true,
       stateManagement: true,
@@ -122,7 +119,7 @@ class _Pres_Bottom_Nav_BarState extends State<Pres_Bottom_Nav_Bar> {
         borderRadius: BorderRadius.circular(10.0),
         colorBehindNavBar: Colors.white,
       ),
-     navBarStyle: NavBarStyle.style15,
+      navBarStyle: NavBarStyle.style15,
     );
   }
 }
