@@ -85,7 +85,7 @@ class _Home_Screen_PageState extends State<Home_Screen_Page> {
           Row(
             children: [
               Container(
-                margin: EdgeInsets.only(top: 50, left: 20),
+                margin: EdgeInsets.only(top: 50, left: 10),
                 child: Icon(
                   Icons.wallet_giftcard_outlined,
                   color: Colors.blue,
@@ -131,67 +131,72 @@ class _Home_Screen_PageState extends State<Home_Screen_Page> {
               ),
             ],
           ),
-          Container(
-            padding: EdgeInsets.all(6),
-            margin: EdgeInsets.only(top: 20, left: 10, right: 10),
-            height: MediaQuery.of(context).size.height * 0.065,
-            decoration: BoxDecoration(
-              color: Colors.blue,
-              borderRadius: BorderRadius.circular(50),
-            ),
-            child: DefaultTabController(
-              length: 2,
-              initialIndex: 0,
-              child: TabBar(
-                indicator: BoxDecoration(
-                    borderRadius: BorderRadius.circular(50),
-                    color: Colors.white),
-                labelColor: Colors.black,
-                unselectedLabelColor: Colors.white,
-                tabs: [
-                  Row(
-                    children: [
-                      SizedBox(
-                        width: 50,
-                      ),
-                      Icon(Icons.apps_outlined),
-                      SizedBox(
-                        width: 5,
-                      ),
-                      Tab(
-                        text: 'Items',
-                      ),
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      SizedBox(
-                        width: 50,
-                      ),
-                      Icon(Icons.location_on),
-                      SizedBox(
-                        width: 5,
-                      ),
-                      Tab(text: 'Tags'),
-                    ],
-                  ),
-                ],
+
+          SingleChildScrollView(
+            child: Container(
+              padding: EdgeInsets.all(6),
+              margin: EdgeInsets.only(top: 20, left: 10, right: 10),
+              height: MediaQuery.of(context).size.height * 0.065,
+              decoration: BoxDecoration(
+                color: Colors.blue,
+                borderRadius: BorderRadius.circular(50),
+              ),
+              child: DefaultTabController(
+                length: 2,
+                initialIndex: 0,
+                child: TabBar(
+                  indicator: BoxDecoration(
+                      borderRadius: BorderRadius.circular(50),
+                      color: Colors.white),
+                  labelColor: Colors.black,
+                  unselectedLabelColor: Colors.white,
+                  tabs: [
+                    Row(
+                      children: [
+                        SizedBox(
+                          width: 50,
+                        ),
+                        Icon(Icons.apps_outlined),
+                        SizedBox(
+                          width: 5,
+                        ),
+                        Tab(
+                          text: 'Items',
+                        ),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        SizedBox(
+                          width: 50,
+                        ),
+                        Icon(Icons.location_on),
+                        SizedBox(
+                          width: 5,
+                        ),
+                        Tab(text: 'Tags'),
+                      ],
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
+
           //
           Expanded(
             flex: 1,
             child: Container(
+              // color: Colors.amber,
               width: double.infinity,
               child: SingleChildScrollView(
                 scrollDirection: Axis.vertical,
                 child: Column(
                   children: [
                     Container(
-                      // color: Colors.amber,
+                      color: Colors.white,
                       margin: EdgeInsets.only(top: 10, left: 10, right: 10),
-                      height: MediaQuery.of(context).size.height * 0.15,
+                      height: MediaQuery.of(context).size.height * 0.17,
                       child: Row(
                         children: [
                           Column(
@@ -213,7 +218,7 @@ class _Home_Screen_PageState extends State<Home_Screen_Page> {
                                 ),
                               ),
                               Container(
-                                margin: EdgeInsets.only(left: 10, top: 15),
+                                margin: EdgeInsets.only(left: 10, top: 10),
                                 child: Text('All'),
                               ),
                             ],
@@ -227,7 +232,9 @@ class _Home_Screen_PageState extends State<Home_Screen_Page> {
                                   return Column(
                                     children: [
                                       Container(
-                                        margin: EdgeInsets.only(left: 10),
+                                        margin: EdgeInsets.only(
+                                          left: 10,
+                                        ),
                                         child: CircleAvatar(
                                           backgroundColor: list[index].color,
                                           radius: 40,
@@ -254,6 +261,9 @@ class _Home_Screen_PageState extends State<Home_Screen_Page> {
                           ),
                         ],
                       ),
+                    ),
+                    SizedBox(
+                      height: 10,
                     ),
                     Row(
                       children: [
@@ -313,15 +323,15 @@ class _Home_Screen_PageState extends State<Home_Screen_Page> {
                           ),
                         ),
                       ],
-                    ),      
+                    ),
                     GridView.builder(
+                        physics: NeverScrollableScrollPhysics(),
                         shrinkWrap: true,
                         itemCount: list1.length,
-                        gridDelegate:
-                            SliverGridDelegateWithFixedCrossAxisCount(
-                                crossAxisCount: 2,
-                                crossAxisSpacing: 0,
-                                childAspectRatio: .64),
+                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 2,
+                            crossAxisSpacing: 0,
+                            childAspectRatio: .64),
                         itemBuilder: (BuildContext context, int index) {
                           return Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -330,8 +340,7 @@ class _Home_Screen_PageState extends State<Home_Screen_Page> {
                                 margin: EdgeInsets.all(10),
                                 height:
                                     MediaQuery.of(context).size.height * 0.26,
-                                width:
-                                    MediaQuery.of(context).size.width * 0.50,
+                                width: MediaQuery.of(context).size.width * 0.50,
                                 decoration: BoxDecoration(
                                   color: Colors.amber,
                                   borderRadius: BorderRadius.circular(10),
@@ -341,11 +350,13 @@ class _Home_Screen_PageState extends State<Home_Screen_Page> {
                                 ),
                               ),
                               Container(
-                                margin: EdgeInsets.only(left: 20),
+                                margin: EdgeInsets.only(left: 20,),
                                 child: Row(
                                   children: [
                                     Text(
-                                      list1[index].title1!, //$80
+                                      list1[index].title1!,
+                                      maxLines: 1,
+                                      overflow: TextOverflow.ellipsis, //$80
                                       style: TextStyle(
                                           color: Colors.black,
                                           fontSize: 22,
@@ -355,7 +366,10 @@ class _Home_Screen_PageState extends State<Home_Screen_Page> {
                                       width: 10,
                                     ),
                                     Text(
-                                      list1[index].title2!, //Firm
+                                      list1[index].title2!,
+                                      maxLines: 1,
+                                      overflow: TextOverflow.ellipsis, //$80
+                                      //Firm
                                       style: TextStyle(
                                           color: Colors.blue, fontSize: 18),
                                     ),
@@ -376,8 +390,10 @@ class _Home_Screen_PageState extends State<Home_Screen_Page> {
                               Container(
                                 margin: EdgeInsets.only(left: 20),
                                 child: Text(
-                                  list1[index]
-                                      .title3!, //  'Beats Headphones',
+                                  list1[index].title3!,
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis, //$80
+                                  //  'Beats Headphones',
                                   style: TextStyle(fontSize: 18),
                                 ),
                               ),
@@ -387,7 +403,10 @@ class _Home_Screen_PageState extends State<Home_Screen_Page> {
                               Container(
                                 margin: EdgeInsets.only(left: 20),
                                 child: Text(
-                                  list1[index].title4!, //  'Boston,MA',
+                                  list1[index].title4!,
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis, //$80
+                                  //  'Boston,MA',
                                   style: TextStyle(
                                       color: Colors.black38, fontSize: 16),
                                 ),
@@ -395,6 +414,7 @@ class _Home_Screen_PageState extends State<Home_Screen_Page> {
                             ],
                           );
                         }),
+                  SizedBox(height: 30,),
                   ],
                 ),
               ),

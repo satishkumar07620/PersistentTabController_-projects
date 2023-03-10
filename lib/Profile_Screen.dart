@@ -60,11 +60,14 @@ class _Profile_ScreenState extends State<Profile_Screen> {
                         child: Container(),
                       ),
                       Container(
-                        // margin: EdgeInsets.only(top: 50),
+                        // width: 1,
+                        // margin: EdgeInsets.only(left: 20, right: 20),
                         child: Text(
                           'University of State College',
                           style: TextStyle(
                               fontSize: 20, fontWeight: FontWeight.bold),
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis, //$80
                         ),
                       ),
                       Expanded(
@@ -80,11 +83,11 @@ class _Profile_ScreenState extends State<Profile_Screen> {
                     children: [
                       Container(
                         margin: EdgeInsets.only(top: 10, left: 20),
-                        height: MediaQuery.of(context).size.height * 0.18,
-                        width: MediaQuery.of(context).size.width * 0.38,
+                        height: MediaQuery.of(context).size.height * 0.20,
+                        width: MediaQuery.of(context).size.width * 0.30,
                         decoration: BoxDecoration(
                           border: Border.all(color: Colors.black26),
-                          borderRadius: BorderRadius.circular(30),
+                          borderRadius: BorderRadius.circular(20),
                         ),
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
@@ -109,10 +112,10 @@ class _Profile_ScreenState extends State<Profile_Screen> {
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                             child: Container(
-                              margin: EdgeInsets.only(
-                                right: 10,
-                              ),
-                              padding: EdgeInsets.only(left: 15, right: 15),
+                              // margin: EdgeInsets.only(
+                              //   right: 10,
+                              // ),
+                              padding: EdgeInsets.all(10),
                               height: 60,
                               decoration: BoxDecoration(),
                               child: Row(
@@ -122,6 +125,8 @@ class _Profile_ScreenState extends State<Profile_Screen> {
                                     style: TextStyle(
                                         fontSize: 22,
                                         fontWeight: FontWeight.bold),
+                                    maxLines: 1,
+                                    overflow: TextOverflow.ellipsis, //$80
                                   ),
                                   SizedBox(
                                     width: 10,
@@ -129,6 +134,8 @@ class _Profile_ScreenState extends State<Profile_Screen> {
                                   Text(
                                     'Members',
                                     style: TextStyle(fontSize: 18),
+                                    maxLines: 1,
+                                    overflow: TextOverflow.ellipsis, //$80
                                   ),
                                 ],
                               ),
@@ -143,6 +150,8 @@ class _Profile_ScreenState extends State<Profile_Screen> {
                                   fontWeight: FontWeight.bold,
                                   color: Color.fromARGB(255, 85, 213, 242),
                                   fontSize: 18),
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis, //$80
                             ),
                           ),
                         ],
@@ -162,6 +171,8 @@ class _Profile_ScreenState extends State<Profile_Screen> {
                           'University of State College',
                           style: TextStyle(
                               fontSize: 20, fontWeight: FontWeight.bold),
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis, //$80
                         ),
                       ),
                       SizedBox(
@@ -174,6 +185,8 @@ class _Profile_ScreenState extends State<Profile_Screen> {
                             child: Text(
                               'Founder:',
                               style: TextStyle(fontSize: 17),
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis, //$80
                             ),
                           ),
                           Container(
@@ -182,6 +195,8 @@ class _Profile_ScreenState extends State<Profile_Screen> {
                               'Samuel Smith',
                               style: TextStyle(
                                   fontWeight: FontWeight.bold, fontSize: 17),
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis, //$80
                             ),
                           ),
                         ],
@@ -192,8 +207,10 @@ class _Profile_ScreenState extends State<Profile_Screen> {
                       Container(
                         margin: EdgeInsets.only(left: 20),
                         child: Text(
-                          'USC is a proud academic instution right in the heart of \n Boston, MA. We are proud to be a part of this dynamic \n learning environment and welcome all students to join \n our TagHawk buying and selling network!',
-                          style: TextStyle(fontSize: 15),
+                          'USC is a proud academic instution right in the heart of Boston, MA. We are proud to be a part of this dynamic  learning environment and welcome all students to join  our TagHawk buying and selling network!',
+                          style: TextStyle(fontSize: 12),
+                          maxLines: 4,
+                          overflow: TextOverflow.ellipsis, //$80
                         ),
                       ),
                     ],
@@ -209,97 +226,108 @@ class _Profile_ScreenState extends State<Profile_Screen> {
               height: 400,
               width: 500,
               // color: Colors.amber,
-              child: Column(children: [  Row(
-              children: [
-                Container(
-                  margin: EdgeInsets.only(
-                    left: 20,
-                  ),
-                  child: Text(
-                    'Shelf',
-                    style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
-                  ),
-                ),
-                Expanded(
-                  child: Container(),
-                ),
-                Container(
-                  height: 30,
-                  width: 80,
-                  margin: EdgeInsets.only(
-                    right: 20,
-                  ),
-                  child: Center(
-                    child: Text(
-                      "View All",
-                      style: TextStyle(
-                          color: Color.fromARGB(255, 54, 206, 244),
-                          fontSize: 16),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(height: 5,),
-
-            GridView.builder(
-              padding: EdgeInsets.all(0),
-              shrinkWrap: true,
-              itemCount: 6,
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 3,
-                // crossAxisSpacing: 5,
-                // mainAxisSpacing: 5,
-                // childAspectRatio: .5
-              ),
-              itemBuilder: (BuildContext context, int index) {
-                return Container(
-                  // padding: EdgeInsets.all(10),
-                  margin: EdgeInsets.all(5),
-                  // height: MediaQuery.of(context).size.height * 0.18,
-                  // width: MediaQuery.of(context).size.width * 0.35,
-                  decoration: BoxDecoration(
-                    // color: Colors.amber,
-                    borderRadius: BorderRadius.circular(20),
-                    image: DecorationImage(
-                        image: AssetImage(
-                          list[index].image!,
+              child: Column(
+                children: [
+                  Row(
+                    children: [
+                      Container(
+                        margin: EdgeInsets.only(
+                          left: 20,
                         ),
-                        fit: BoxFit.fill),
-                  ),
-                );
-              },
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            Center(
-              child: Container(
-                height: 60,
-                width: 300,
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    begin: Alignment.topRight,
-                    end: Alignment.bottomLeft,
-                    colors: [
-                      Color.fromARGB(255, 123, 234, 234),
-                      Color.fromARGB(255, 55, 204, 234),
+                        child: Text(
+                          'Shelf',
+                          style: TextStyle(
+                              fontSize: 22, fontWeight: FontWeight.bold),
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis, //$80
+                        ),
+                      ),
+                      Expanded(
+                        child: Container(),
+                      ),
+                      Container(
+                        height: 30,
+                        width: 80,
+                        margin: EdgeInsets.only(
+                          right: 20,
+                        ),
+                        child: Center(
+                          child: Text(
+                            "View All",
+                            style: TextStyle(
+                                color: Color.fromARGB(255, 54, 206, 244),
+                                fontSize: 16),
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis, //$80
+                          ),
+                        ),
+                      ),
                     ],
                   ),
-                  // color: Color(0xFF42ddfc),
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                child: Center(
-                  child: Text(
-                    'Chat',
-                    style: TextStyle(fontSize: 25, color: Colors.white),
+                  SizedBox(
+                    height: 5,
                   ),
-                ),
+                  GridView.builder(
+                    physics: NeverScrollableScrollPhysics(),
+                    padding: EdgeInsets.all(0),
+                    shrinkWrap: true,
+                    itemCount: 6,
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 3,
+                      // crossAxisSpacing: 5,
+                      // mainAxisSpacing: 5,
+                      // childAspectRatio: .5
+                    ),
+                    itemBuilder: (BuildContext context, int index) {
+                      return Container(
+                        // padding: EdgeInsets.all(10),
+                        margin: EdgeInsets.all(5),
+                        // height: MediaQuery.of(context).size.height * 0.18,
+                        // width: MediaQuery.of(context).size.width * 0.35,
+                        decoration: BoxDecoration(
+                          // color: Colors.amber,
+                          borderRadius: BorderRadius.circular(20),
+                          image: DecorationImage(
+                              image: AssetImage(
+                                list[index].image!,
+                              ),
+                              fit: BoxFit.fill),
+                        ),
+                      );
+                    },
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Center(
+                    child: Container(
+                      height: 60,
+                      width: 300,
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          begin: Alignment.topRight,
+                          end: Alignment.bottomLeft,
+                          colors: [
+                            Color.fromARGB(255, 123, 234, 234),
+                            Color.fromARGB(255, 55, 204, 234),
+                          ],
+                        ),
+                        // color: Color(0xFF42ddfc),
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Center(
+                        child: Text(
+                          'Chat',
+                          style: TextStyle(fontSize: 25, color: Colors.white),
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis, //$80
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
-          ],),
-            ),
-            
           ],
         ),
       ),

@@ -2,8 +2,13 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:march1task/Profile_Screen.dart';
+import 'package:march1task/Profile_Screen.dart';
+import 'package:march1task/Profile_Screen.dart';
 import 'package:march1task/home_screen.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
+
+import 'Profile_Screen.dart';
 
 class Pres_Bottom_Nav_Bar extends StatefulWidget {
   const Pres_Bottom_Nav_Bar({super.key});
@@ -20,6 +25,7 @@ class _Pres_Bottom_Nav_BarState extends State<Pres_Bottom_Nav_Bar> {
   List<Widget> _buildScreen() {
     return [
       Home_Screen_Page(),
+      // Profile_Screen(),
       Text(
         '',
       ),
@@ -29,9 +35,7 @@ class _Pres_Bottom_Nav_BarState extends State<Pres_Bottom_Nav_Bar> {
       Text(
         "",
       ),
-      Text(
-        '',
-      ),
+      Profile_Screen(),
     ];
   }
 
@@ -90,6 +94,11 @@ class _Pres_Bottom_Nav_BarState extends State<Pres_Bottom_Nav_Bar> {
         inactiveColorPrimary: CupertinoColors.systemGrey,
       ),
       PersistentBottomNavBarItem(
+        //    icon: IconButton(
+        //    onPressed: () {},
+        //    icon: Icon(Icons.code),
+        //  ),
+
         icon: Icon(Icons.add_reaction_sharp),
         title: ("Profile"),
         textStyle: TextStyle(
